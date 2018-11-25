@@ -1,0 +1,26 @@
+html
+    head
+        title= 'Home'
+    body
+        h1= 'Welcome to my web' 
+        h4= "Sign In"
+        form(action="/signin", method="post")
+            input(type="text", name="username")
+            input(type="password", name="password")
+            input(type="submit", value="submit")
+        h4= 'Sign Up'
+        form(action="/signup", method="post")
+            label(for="username")= "Username: "
+            input(type="text", name="username")
+            label(for="Password")= "Password: "
+            input(type="password", name="password")
+            label(for="email")= "Email: "
+            input(type="email", name="email")
+            label(for="gender")= "Gender: "
+            select(name="gender")
+                option(value="Male")= 'Male'
+                option(value="Female")= 'Female'
+            label(for="birth")= "Birth: "
+            input(type="date", name="birth")
+            input(type="submit", value="Registry")
+
