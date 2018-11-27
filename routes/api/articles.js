@@ -1,28 +1,26 @@
-const Articles = require('mongoose').model('articles')
+const Articles = require('../../models/Articles')
 const router = require('express').Router()
 
 
 router.route('/')
-    .post((req, res, next)=> {
+    .post((req, res)=> {
         const {body} = req
-        let title = body.title
         let content = body.content
-        let author = body.author
-        if(title && content && author) {
-            Articles.create([
-                {
-                    title,
-                    content,
-                    author
-                }
-            ])
-        }
-        res.redirect('/')
-        next()
+        let author = req.session.username
+        let data = JSON.stringify(req.body)
+        console.log(data.content)
+        console.log(req.content, content)
+        if(content && author) {
+            Articles.create({content,author}, result=> {
+                    if(result) res.send(true)
+                    else res.send(false)
+            })
+        } else res.send(false)
     })
     .get((req, res)=>{
-        Articles.find({}, (err, docs)=>{
-            res.render('articles.pug',{articles: docs})
+        Articles.get((result, data)=> {
+            if(result) res.json(data)
+            else res.send(false)
         })
     })
 

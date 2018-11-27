@@ -17,7 +17,7 @@ hr {
     border: none;
     border-bottom: 1px #ddd solid;
 }
-input {
+input, textarea {
     width: 100%;
     padding: 8px;
     border-radius: 5px;

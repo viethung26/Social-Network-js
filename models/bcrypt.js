@@ -12,9 +12,7 @@ exports.cryptPassword = (password, callback) => {
 }
 
 exports.comparePassword = (plainPass, hashword, callback)=> {
-    console.log('pass: ',plainPass, hashword)
     bcrypt.compare(plainPass, hashword,(err, isPasswordMatch) => { 
-        console.log(isPasswordMatch)  
         if(err) callback(err)
         else callback(null, isPasswordMatch)
     })
