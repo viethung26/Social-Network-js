@@ -3,7 +3,7 @@ const multer = require('multer')
 const upload = multer({dest: 'upload/'})
 const Users = require('mongoose').model('users')
 route.post('/avatar', upload.single('avatar'), (req, res, next)=> {
-    let user = 'hung'
+    let user = req.session.username
     Users.avatar(user, req.file.filename, (result, username)=> {
         if(result) {
             res.send(username+ "thanh cong")
@@ -12,8 +12,5 @@ route.post('/avatar', upload.single('avatar'), (req, res, next)=> {
         }
         next()
     })
-})
-route.get('/avatar', (req, res)=> {
-    res.send("hi")
 })
 module.exports = route

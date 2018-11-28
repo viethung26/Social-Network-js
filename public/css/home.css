@@ -1,14 +1,9 @@
 .web-name {
     font-family: 'Pacifico', cursive; text-align: center; font-size: 40px;
 }
-.grid-body {
-    display: grid;
-    grid-template-rows: 80% 20%;
-}
 .grid-container {
     display: grid;
     grid-template-columns: 65% 35%;
-    height: 100vh;
 }
 .left{
     grid-column-start: 1;
@@ -20,7 +15,6 @@
     border: solid 1px gainsboro;
 }
 .footer {
-    display: inline-block;
     text-align: center;
     width: 100%;
     height: 40px;
@@ -241,4 +235,9 @@
 }
 .policy {
     font-size: 12px;
+}
+.see-first {
+    font-size: 24px;
+    font-style: italic;
+    font-family: 'Pacifico', cursive; text-align: center;
 }

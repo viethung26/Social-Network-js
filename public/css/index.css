@@ -35,9 +35,12 @@ button {
     border-radius: 5px;
     border-style: none;
     cursor: pointer;
+    color: #888;
+    background-color: #efefef;
 }
 button:hover {
-    background-color: blue;
+    background-color: #ddd;
+    color: #fff;
 }
 button:focus {
     outline: none;

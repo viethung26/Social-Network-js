@@ -18,4 +18,4 @@ app.use(express.static('./public'))
 app.use(express.static('./upload'))
 
 app.listen(3000)
-console.log('Blog is running')
+console.log('Blog is running at http://localhost:3000/')

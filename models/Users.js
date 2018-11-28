@@ -23,7 +23,7 @@ exports.signin = function(body, callback){
             Bcrypt.comparePassword(password, user.password, (err, isMatch)=>{
                 if(err) callback(false)
                 if(isMatch) {
-                    callback(true, user.username)
+                    callback(true, user._id)
                 } else callback(false)
             })
         }
@@ -47,8 +47,10 @@ exports.signup = function(body, callback){
                 Bcrypt.cryptPassword(password, (err, hash)=> {
                     if(err) callback(false)
                     else {
-                        users.create({email, username, password: hash, gender, firstname, lastname, avatar})
-                        callback(true, username)
+                        users.create({email, username, password: hash, gender, firstname, lastname, avatar}, (err, user)=> {
+                            if(err) callback(false)
+                            else callback(true, user._id)
+                        })
                     }
                 })
             } else {
@@ -71,9 +73,18 @@ exports.findByUsername = function(username, callback) {
     users.findOne({username}, (err, user)=> {
         if(err) callback(false)
         else {
-            let {avatar, firstname} = user
-            let data = {avatar,firstname}
+            let {_id, avatar, firstname, lastname} = user
+            let data = {_id, avatar,firstname, lastname}
             callback(true, data)
         }
+    })
+}
+exports.findById = function(id, callback) {
+    users.findById({_id:id}, {}, (err, doc)=> {
+        if(err) {
+            console.log(err)
+            callback(false)
+        }
+        else callback(true, doc)
     })
 }
