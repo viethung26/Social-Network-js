@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "3f250e8f552293e31ff3";
+/******/ 	var hotCurrentHash = "ba107263a2c7ae5ab886";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -825,7 +825,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".article {\r\n    border: 1px solid #ddd;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    color: black;\r\n}\r\n.article:hover {\r\n    background-color:#fafafa;\r\n}\r\n.article-header {\r\n    display: grid;\r\n    grid-template-columns: 10% 1fr 10%;\r\n    padding: 10px;\r\n}\r\n.article-content {\r\n    color: black;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 20px;\r\n    white-space: pre-line;\r\n}\r\n.article-hr {\r\n    border: none;\r\n    border-bottom: 1px solid #ddd;\r\n    width: 100%;\r\n}\r\n.article-btn-action {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n}\r\n.article-avatar {\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 50%;\r\n    box-shadow: 0px 0px 5px 0px black;\r\n    overflow: hidden;\r\n}\r\n.article-avatar img {\r\n    height: 100%;\r\n}\r\n.article-name {\r\n    color: darkblue;\r\n    font-weight: bold;\r\n}\r\n.article-options {\r\n    background-color: transparent;\r\n}\r\n.article-options:hover {\r\n    background-color: transparent;\r\n}\r\n.article-btn-action button {\r\n    color: #555;\r\n    padding: 10px;\r\n    /* font-size: 16px; */\r\n    font-weight: bold;\r\n    background: transparent;\r\n}\r\n.article-btn-action button:hover {\r\n    color: white;\r\n    background-color: #ddd;\r\n}\r\n\r\n.article-comment-line {\r\n    display: grid;\r\n    grid-template-columns: 50px 1fr;\r\n}\r\n.article-comment-avatar {\r\n    vertical-align: middle;\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 50%;\r\n    box-shadow: 0px 0px 5px 0px black;\r\n    overflow: hidden;\r\n}\r\n.article-comment-avatar img {\r\n    height: 100%;\r\n}\r\n.article-comment-content  {\r\n    border-radius: 10px;\r\n    padding: 5px;\r\n    background-color: #eee;\r\n}\r\n.article-comment-name {\r\n    color: darkblue;\r\n    font-weight: bold;\r\n}\r\n.liked {\r\n    color: blue!important;\r\n}", ""]);
+exports.push([module.i, ".article {\r\n    position: relative;\r\n    border: 1px solid #ddd;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    color: black;\r\n}\r\n.article:hover {\r\n    background-color:#fafafa;\r\n}\r\n.article-header {\r\n    display: grid;\r\n    grid-template-columns: 10% 1fr;\r\n    padding: 5px;\r\n}\r\n.article-content {\r\n    color: black;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 20px;\r\n    white-space: pre-line;\r\n}\r\n.article-hr {\r\n    border: none;\r\n    border-bottom: 1px solid #ddd;\r\n    width: 100%;\r\n}\r\n.article-btn-action {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n}\r\n.article-avatar {\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 50%;\r\n    box-shadow: 0px 0px 5px 0px black;\r\n    overflow: hidden;\r\n}\r\n.article-avatar img {\r\n    height: 100%;\r\n}\r\n.article-name {\r\n    color: darkblue;\r\n    font-weight: bold;\r\n}\r\n.article-options {\r\n    background-color: transparent;\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n}\r\n.article-options:hover {\r\n    background-color: transparent;\r\n}\r\n.article-btn-action button {\r\n    color: #555;\r\n    padding: 10px;\r\n    /* font-size: 16px; */\r\n    font-weight: bold;\r\n    background: transparent;\r\n}\r\n.article-btn-action button:hover {\r\n    color: white;\r\n    background-color: #ddd;\r\n}\r\n\r\n.article-comment-line {\r\n    display: grid;\r\n    grid-template-columns: 50px 1fr;\r\n}\r\n.article-comment-avatar {\r\n    vertical-align: middle;\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 50%;\r\n    box-shadow: 0px 0px 5px 0px black;\r\n    overflow: hidden;\r\n}\r\n.article-comment-avatar img {\r\n    height: 100%;\r\n}\r\n.article-comment-content  {\r\n    border-radius: 10px;\r\n    padding: 5px;\r\n    background-color: #eee;\r\n}\r\n.article-comment-name {\r\n    color: darkblue;\r\n    font-weight: bold;\r\n}\r\n.liked {\r\n    color: blue!important;\r\n}", ""]);
 
 // exports
 
@@ -920,7 +920,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".body-grid {\r\n    display: grid;\r\n    grid-template-columns: 10% 20% 1fr 15% 20%;\r\n}\r\n.body-main {\r\n    background-color: #fff;\r\n    padding: 10px;\r\n    width: 100%;\r\n    height: fit-content;\r\n}\r\n.body-left {\r\n    background-color: #ddd;\r\n}\r\n.body-right {\r\n    background-color: #ddd;\r\n\r\n}", ""]);
+exports.push([module.i, ".body-grid {\r\n    display: grid;\r\n    grid-template-columns: 1fr 2fr 560px 2fr 2fr;\r\n}\r\n.body-main {\r\n    background-color: #fff;\r\n    padding: 10px;\r\n    width: 100%;\r\n    height: fit-content;\r\n}\r\n.body-left {\r\n    background-color: #ddd;\r\n}\r\n.body-right {\r\n    background-color: #ddd;\r\n\r\n}", ""]);
 
 // exports
 
@@ -939,7 +939,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".main {\r\n    display: inline-block;\r\n    width: 100%;\r\n    height: 50px;\r\n    overflow: hidden;\r\n    background-color:#fff;\r\n    box-shadow: 0px 0px 5px 0px #ddd;\r\n    border: none;\r\n\r\n}\r\n.grid-container {\r\n    display: grid;\r\n    grid-template-columns: 20% 1fr 30%;\r\n    width: 980px;\r\n    height: 50px;\r\n    line-height: 50px;\r\n    margin:auto;\r\n    \r\n}\r\n.logo {\r\n    vertical-align: middle;\r\n    height: 50px;\r\n}\r\n.logo-name{\r\n    /* vertical-align: middle; */\r\n    font-family: 'Pacifico', cursive; vertical-align: -15px; font-size: 25px;\r\n}\r\n.status-bar {\r\n    text-align: right;\r\n  \r\n}\r\n.stt-option {\r\n    position: absolute;\r\n    top: 8px;\r\n    right: 5px;\r\n}\r\n.stt-option-btn {\r\n    font-size: 20px;\r\n    color: black;\r\n    padding: 5px;\r\n    background-color: #fff;\r\n}\r\n.stt-option-btn:hover {\r\n    background-color: #ddd;\r\n}\r\n.stt-option-menu {\r\n    position: absolute;\r\n    right: 5px;\r\n    width: 150px;\r\n    padding: 0px;\r\n    background-color: #fff;\r\n    box-shadow: 0px 0px 5px 0px #ddd;\r\n\r\n}\r\n.stt-option-item {\r\n    list-style-type: none;\r\n    width: 100%;\r\n    border-bottom: 1px solid #ddd;\r\n}\r\n.stt-option-item a {\r\n    display: block;\r\n    padding-left: 16px;\r\n    width: 100%;\r\n}\r\n.stt-option-item a:hover {\r\n    background-color: #ddd;\r\n    color: #fff;\r\n}", ""]);
+exports.push([module.i, ".main {\r\n    display: inline-block;\r\n    width: 100%;\r\n    height: 50px;\r\n    overflow: hidden;\r\n    background-color:#fff;\r\n    box-shadow: 0px 0px 5px 0px #ddd;\r\n    border: none;\r\n\r\n}\r\n.grid-container {\r\n    display: grid;\r\n    grid-template-columns: 20% 1fr 30%;\r\n    width: 980px;\r\n    height: 50px;\r\n    line-height: 50px;\r\n    margin:auto;\r\n    \r\n}\r\n.logo {\r\n    vertical-align: middle;\r\n    height: 50px;\r\n}\r\n.logo-name{\r\n    /* vertical-align: middle; */\r\n    font-family: 'Pacifico', cursive; vertical-align: -15px; font-size: 25px;\r\n}\r\n.status-bar {\r\n    text-align: right;\r\n  \r\n}\r\n.stt-option {\r\n    position: absolute;\r\n    top: 8px;\r\n    right: 5px;\r\n}\r\n.stt-option-btn {\r\n    font-size: 20px;\r\n    color: black;\r\n    padding: 5px;\r\n    background-color: transparent;\r\n}\r\n.stt-option-btn:hover {\r\n    background-color: #ddd;\r\n}\r\n.stt-option-menu {\r\n    position: absolute;\r\n    right: 5px;\r\n    width: 150px;\r\n    padding: 0px;\r\n    background-color: #fff;\r\n    box-shadow: 0px 0px 5px 0px #ddd;\r\n\r\n}\r\n.stt-option-item {\r\n    list-style-type: none;\r\n    width: 100%;\r\n    border-bottom: 1px solid #ddd;\r\n}\r\n.stt-option-item a {\r\n    display: block;\r\n    padding-left: 16px;\r\n    width: 100%;\r\n}\r\n.stt-option-item a:hover {\r\n    background-color: #ddd;\r\n    color: #fff;\r\n}", ""]);
 
 // exports
 
@@ -24805,46 +24805,43 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Article).call(this, props));
     _this.state = {
-      userArticles: [],
-      commentBoxs: []
+      userArticle: null,
+      commentBox: false
     };
     _this.onComment = _this.onComment.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
   _createClass(Article, [{
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(props) {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       var _this2 = this;
 
-      props.articles.forEach(function (article, index) {
-        if (!article) return;
-        var req = new XMLHttpRequest();
-        req.open('POST', '/account/id', true);
-        req.setRequestHeader("Content-Type", "application/json");
+      var _this$props = this.props,
+          article = _this$props.article,
+          index = _this$props.index;
+      if (!article) return;
+      var req = new XMLHttpRequest();
+      req.open('POST', '/account/id', true);
+      req.setRequestHeader("Content-Type", "application/json");
 
-        req.onload = function () {
-          var user = JSON.parse(req.response);
+      req.onload = function () {
+        var user = JSON.parse(req.response);
 
-          if (user) {
-            var _this2$state = _this2.state,
-                userArticles = _this2$state.userArticles,
-                commentBoxs = _this2$state.commentBoxs;
-            if (!user.avatar) user.avatar = "media/logo.png";
-            userArticles[index] = user;
-            commentBoxs[index] = false;
+        if (user) {
+          var userArticle = _this2.state.userArticle;
+          if (!user.avatar) user.avatar = "media/logo.png";
+          userArticle = user;
 
-            _this2.setState({
-              userArticles: userArticles,
-              commentBoxs: commentBoxs
-            });
-          }
-        };
+          _this2.setState({
+            userArticle: userArticle
+          });
+        }
+      };
 
-        req.send(JSON.stringify({
-          userId: article.author
-        }));
-      });
+      req.send(JSON.stringify({
+        userId: article.author
+      }));
     }
   }, {
     key: "onComment",
@@ -24861,101 +24858,106 @@ function (_Component) {
     }
   }, {
     key: "toggleCommentBox",
-    value: function toggleCommentBox(index) {
-      var commentBoxs = this.state.commentBoxs;
-      commentBoxs[index] = !commentBoxs[index];
+    value: function toggleCommentBox() {
+      var commentBox = this.state.commentBox;
+      commentBox = !commentBox;
       this.setState({
-        commentBoxs: commentBoxs
+        commentBox: commentBox
       });
+    }
+  }, {
+    key: "calTime",
+    value: function calTime(timeCreated) {
+      var date = Date.parse(timeCreated);
+      var minutes = (Date.now() - date) / 60 / 1000;
+      var time = Math.round(minutes) + " minutes";
+      if (minutes < 1) time = "Just now";else if (minutes > 60) {
+        var hours = minutes / 60;
+        time = Math.round(hours) + " hours";
+
+        if (hours > 24) {
+          var days = hours / 24;
+          time = Math.round(days) + " days";
+        }
+      }
+      return time;
     }
   }, {
     key: "render",
     value: function render() {
       var _this3 = this;
 
-      var rows = [];
       var _this$state = this.state,
-          userArticles = _this$state.userArticles,
-          commentBoxs = _this$state.commentBoxs;
-      this.props.articles.forEach(function (article, index) {
-        if (!article) return;
-        var userId = _this3.props.user ? _this3.props.user._id : null;
-        var isLiked = -1;
+          userArticle = _this$state.userArticle,
+          commentBox = _this$state.commentBox;
+      var _this$props2 = this.props,
+          article = _this$props2.article,
+          index = _this$props2.index;
+      if (!article) return;
+      var userId = this.props.user ? this.props.user._id : null;
+      var isLiked = -1;
 
-        if (userId) {
-          isLiked = article.likes.findIndex(function (val) {
-            return val === userId;
-          });
+      if (userId) {
+        isLiked = article.likes.findIndex(function (val) {
+          return val === userId;
+        });
+      }
+
+      var time = this.calTime(article.createdAt);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: index,
+        className: "article mt-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "article-options"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-angle-down"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "article-header mb-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "article-avatar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: userArticle ? userArticle.avatar : "media/logo.png",
+        alt: "avatar"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "article-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "article-name"
+      }, userArticle ? "".concat(userArticle.firstname, " ").concat(userArticle.lastname) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, time))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "article-content"
+      }, article.content), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        className: "article-hr mt-4 mb-4"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "article-btn-action"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: isLiked > -1 ? "liked" : "",
+        onClick: function onClick() {
+          return _this3.props.onLike(article._id);
         }
-
-        var date = Date.parse(article.createdAt);
-        var minutes = (Date.now() - date) / 60 / 1000;
-        var time = Math.round(minutes) + " minutes";
-        if (minutes < 1) time = "Just now";else if (minutes > 60) {
-          var hours = minutes / 60;
-          time = Math.round(hours) + " hours";
-
-          if (hours > 24) {
-            var days = hours / 24;
-            time = Math.round(days) + " days";
-          }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "far fa-thumbs-up mr-4"
+      }), article.likes.length), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this3.toggleCommentBox();
         }
-        rows.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: index,
-          className: "article mt-4"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "article-header mb-4"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "article-avatar"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: userArticles[index] ? userArticles[index].avatar : "media/logo.png",
-          alt: "avatar"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "article-info"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "article-name"
-        }, userArticles[index] ? "".concat(userArticles[index].firstname, " ").concat(userArticles[index].lastname) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, time)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "article-options"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-angle-down"
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "article-content"
-        }, article.content), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-          className: "article-hr mt-4 mb-4"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "article-btn-action"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: isLiked > -1 ? "liked" : "",
-          onClick: function onClick() {
-            return _this3.props.onLike(article._id);
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "far fa-thumbs-up mr-4"
-        }), article.likes.length), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: function onClick() {
-            return _this3.toggleCommentBox(index);
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "far fa-comment mr-4"
-        }), article.comments.length), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "far fa-share-square mr-2"
-        }), "Share")), !commentBoxs[index] ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "article-comments"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-          className: "article-hr mb-8"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          comments: article.comments
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          className: "mt-4",
-          type: "text",
-          placeholder: "Write your comment",
-          autoFocus: true,
-          onKeyDown: function onKeyDown(event) {
-            return _this3.onComment(event, article._id);
-          }
-        })) : null));
-      });
-      return rows;
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "far fa-comment mr-4"
+      }), article.comments.length), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "far fa-share-square mr-2"
+      }), "Share")), commentBox ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "article-comments"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        className: "article-hr mb-8"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        comments: article.comments
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "mt-4",
+        type: "text",
+        placeholder: "Write your comment",
+        autoFocus: true,
+        onKeyDown: function onKeyDown(event) {
+          return _this3.onComment(event, article._id);
+        }
+      })) : null);
     }
   }]);
 
@@ -25015,11 +25017,11 @@ function (_Component) {
   }
 
   _createClass(Comment, [{
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(props) {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       var _this2 = this;
 
-      props.comments.forEach(function (comment, index) {
+      this.props.comments.forEach(function (comment, index) {
         var req = new XMLHttpRequest();
         req.open('POST', '/account/id', true);
         req.setRequestHeader("Content-Type", "application/json");
@@ -25042,6 +25044,42 @@ function (_Component) {
           userId: comment.author
         }));
       });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var _this3 = this;
+
+      var current = this.props;
+      var index = prevProps.comments.length;
+
+      if (index !== current.comments.length) {
+        var newComment = current.comments[index];
+
+        if (newComment) {
+          var req = new XMLHttpRequest();
+          req.open('POST', '/account/id', true);
+          req.setRequestHeader("Content-Type", "application/json");
+
+          req.onload = function () {
+            var user = JSON.parse(req.response);
+
+            if (user) {
+              var commentUsers = _this3.state.commentUsers;
+              if (!user.avatar) user.avatar = "media/logo.png";
+              commentUsers[index] = user;
+
+              _this3.setState({
+                commentUsers: commentUsers
+              });
+            }
+          };
+
+          req.send(JSON.stringify({
+            userId: newComment.author
+          }));
+        }
+      }
     }
   }, {
     key: "loadComments",
@@ -25308,6 +25346,24 @@ function (_Component) {
       }));
     }
   }, {
+    key: "loadArticles",
+    value: function loadArticles() {
+      var _this6 = this;
+
+      var rows = [];
+      this.state.articles.forEach(function (article, index) {
+        if (article) rows.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Article_Article__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: index,
+          article: article,
+          index: index,
+          onLike: _this6.handleLike,
+          onComment: _this6.handleComment,
+          user: _this6.props.user
+        }));
+      });
+      return rows;
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -25319,12 +25375,7 @@ function (_Component) {
         type: "text",
         name: "content",
         placeholder: "Write something"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Post")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Article_Article__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        articles: this.state.articles,
-        onLike: this.handleLike,
-        onComment: this.handleComment,
-        user: this.props.user
-      }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Post")), this.loadArticles());
     }
   }]);
 
