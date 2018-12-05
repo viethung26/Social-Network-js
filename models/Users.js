@@ -1,15 +1,21 @@
 const mongoose = require('mongoose')
+const uniqueValidator = require('mongoose-unique-validator')
+// const crypto = require('crypto')
 const Schema = mongoose.Schema
+const ObjectId = Schema.Types.ObjectId
 const Bcrypt = require('./bcrypt')
 const UserSchema = new Schema({
-    username: String,
+    username: {type: String, lowercase: true, unique: true, required: [true, "can't be blank"], match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true},
+    email: {type: String, lowercase: true, unique: true, required: [true, "can't be blank"], match: [/\S+@\S+\.\S+/, 'is invalid'], index: true},
+    bio: String,
     firstname:String,
     lastname: String,
     password: String,
     gender: String,
-    email: String,
-    avatar: String
+    avatar: String, 
+    following: [{type: ObjectId}]
 },{timestamps: true})
+UserSchema.plugin(uniqueValidator, {message: 'is already taken.'})
 const users = mongoose.model('users',UserSchema)
 
 exports.signin = function(body, callback){
@@ -30,36 +36,29 @@ exports.signin = function(body, callback){
     })
 }
 exports.signup = function(body, callback){
-    let username = body.username.toLowerCase()
+    let username = body.username
     let password = body.password
     let gender = body.gender
-    let email = body.email.toLowerCase()
+    let email = body.email
     let firstname = body.firstname
     let lastname = body.lastname||''
     let avatar = ''
-    users.countDocuments({username}, (err,number)=> {
-        if(err) {
-            console.error(err)
-            callback(false)
-        }
-        if(number===0) {
-            if(username && password && gender && email && firstname) {
-                Bcrypt.cryptPassword(password, (err, hash)=> {
-                    if(err) callback(false)
-                    else {
-                        users.create({email, username, password: hash, gender, firstname, lastname, avatar}, (err, user)=> {
-                            if(err) callback(false)
-                            else callback(true, user._id)
-                        })
+    if(username && password && gender && email && firstname) {
+        Bcrypt.cryptPassword(password, (err, hash)=> {
+            if(err) callback(false)
+            else {
+                users.create({email, username, password: hash, gender, firstname, lastname, avatar}, (err, user)=> {
+                    if(err) {
+                        console.log(err)
+                        callback(false)
                     }
+                    else callback(true, user._id)
                 })
-            } else {
-                callback(false)
             }
-        } else {
-            callback(false)
-        }
-    })
+        })
+    } else {
+        callback(false)
+    }
     
 }
 exports.avatar = function(username, avatar, callback){

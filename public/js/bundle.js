@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "ba107263a2c7ae5ab886";
+/******/ 	var hotCurrentHash = "4351c97a12e932401203";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -825,7 +825,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".article {\r\n    position: relative;\r\n    border: 1px solid #ddd;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    color: black;\r\n}\r\n.article:hover {\r\n    background-color:#fafafa;\r\n}\r\n.article-header {\r\n    display: grid;\r\n    grid-template-columns: 10% 1fr;\r\n    padding: 5px;\r\n}\r\n.article-content {\r\n    color: black;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 20px;\r\n    white-space: pre-line;\r\n}\r\n.article-hr {\r\n    border: none;\r\n    border-bottom: 1px solid #ddd;\r\n    width: 100%;\r\n}\r\n.article-btn-action {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n}\r\n.article-avatar {\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 50%;\r\n    box-shadow: 0px 0px 5px 0px black;\r\n    overflow: hidden;\r\n}\r\n.article-avatar img {\r\n    height: 100%;\r\n}\r\n.article-name {\r\n    color: darkblue;\r\n    font-weight: bold;\r\n}\r\n.article-options {\r\n    background-color: transparent;\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n}\r\n.article-options:hover {\r\n    background-color: transparent;\r\n}\r\n.article-btn-action button {\r\n    color: #555;\r\n    padding: 10px;\r\n    /* font-size: 16px; */\r\n    font-weight: bold;\r\n    background: transparent;\r\n}\r\n.article-btn-action button:hover {\r\n    color: white;\r\n    background-color: #ddd;\r\n}\r\n\r\n.article-comment-line {\r\n    display: grid;\r\n    grid-template-columns: 50px 1fr;\r\n}\r\n.article-comment-avatar {\r\n    vertical-align: middle;\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 50%;\r\n    box-shadow: 0px 0px 5px 0px black;\r\n    overflow: hidden;\r\n}\r\n.article-comment-avatar img {\r\n    height: 100%;\r\n}\r\n.article-comment-content  {\r\n    border-radius: 10px;\r\n    padding: 5px;\r\n    background-color: #eee;\r\n}\r\n.article-comment-name {\r\n    color: darkblue;\r\n    font-weight: bold;\r\n}\r\n.liked {\r\n    color: blue!important;\r\n}", ""]);
+exports.push([module.i, ".article {\r\n    position: relative;\r\n    border: 1px solid #ddd;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    color: black;\r\n}\r\n.article:hover {\r\n    background-color:#fafafa;\r\n}\r\n.article-header {\r\n    display: grid;\r\n    grid-template-columns: 10% 1fr;\r\n    padding: 5px;\r\n}\r\n.article-content {\r\n    position: relative;\r\n    color: black;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 20px;\r\n    white-space: pre-line;\r\n}\r\n.article-content div[contentEditable=\"true\"] {\r\n    background-color: rgb(182, 162, 162);\r\n}\r\n.article-content button {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    right: 0px;\r\n    color: #555;\r\n    border-left: 1px solid #ddd;\r\n    border-top: 1px solid #ddd;\r\n    padding: 2px;\r\n    font-weight: bold;\r\n    background: transparent;\r\n}\r\n.article-hr {\r\n    border: none;\r\n    border-bottom: 1px solid #ddd;\r\n    width: 100%;\r\n}\r\n.article-btn-action {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n}\r\n.article-avatar {\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 50%;\r\n    box-shadow: 0px 0px 5px 0px black;\r\n    overflow: hidden;\r\n}\r\n.article-avatar img {\r\n    height: 100%;\r\n}\r\n.article-name {\r\n    color: darkblue;\r\n    font-weight: bold;\r\n}\r\n.article-options {\r\n    background-color: transparent;\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n}\r\n.article-options:hover {\r\n    background-color: transparent;\r\n}\r\n.article-option-content {\r\n    z-index: 1;\r\n    position: absolute;\r\n    right: 0px;\r\n    top: 30px;\r\n    width: 80px;\r\n    padding: 0px;\r\n    background-color: #fff;\r\n    box-shadow: 0px 0px 5px 0px #ddd;\r\n}\r\n.article-option-item {\r\n    list-style-type: none;\r\n    padding: 5px;\r\n    padding-left: 10px;\r\n    width: 100%;\r\n    border-bottom: 1px solid #ddd;\r\n    cursor: pointer;\r\n    font-weight: bold;\r\n\r\n}\r\n.article-option-item:hover {\r\n    background-color: #ddd;\r\n    color: #fff;\r\n\r\n}\r\n.article-btn-action button {\r\n    color: #555;\r\n    padding: 10px;\r\n    /* font-size: 16px; */\r\n    font-weight: bold;\r\n    background: transparent;\r\n}\r\n.article-btn-action button:hover {\r\n    color: white;\r\n    background-color: #ddd;\r\n}\r\n\r\n.article-comment-line {\r\n    display: grid;\r\n    grid-template-columns: 50px 1fr;\r\n}\r\n.article-comment-avatar {\r\n    vertical-align: middle;\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 50%;\r\n    box-shadow: 0px 0px 5px 0px black;\r\n    overflow: hidden;\r\n}\r\n.article-comment-avatar img {\r\n    height: 100%;\r\n}\r\n.article-comment-content  {\r\n    border-radius: 10px;\r\n    padding: 5px;\r\n    background-color: #eee;\r\n}\r\n.article-comment-name {\r\n    color: darkblue;\r\n    font-weight: bold;\r\n}\r\n.liked {\r\n    color: blue!important;\r\n}", ""]);
 
 // exports
 
@@ -24805,45 +24805,17 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Article).call(this, props));
     _this.state = {
-      userArticle: null,
-      commentBox: false
+      commentBox: false,
+      optionMenu: false,
+      isEditing: false,
+      content: ''
     };
     _this.onComment = _this.onComment.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.onChangeContent = _this.onChangeContent.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
   _createClass(Article, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      var _this$props = this.props,
-          article = _this$props.article,
-          index = _this$props.index;
-      if (!article) return;
-      var req = new XMLHttpRequest();
-      req.open('POST', '/account/id', true);
-      req.setRequestHeader("Content-Type", "application/json");
-
-      req.onload = function () {
-        var user = JSON.parse(req.response);
-
-        if (user) {
-          var userArticle = _this2.state.userArticle;
-          if (!user.avatar) user.avatar = "media/logo.png";
-          userArticle = user;
-
-          _this2.setState({
-            userArticle: userArticle
-          });
-        }
-      };
-
-      req.send(JSON.stringify({
-        userId: article.author
-      }));
-    }
-  }, {
     key: "onComment",
     value: function onComment(event, articleId) {
       if (event.keyCode === 13) {
@@ -24854,6 +24826,38 @@ function (_Component) {
           this.props.onComment(articleId, content);
           input.value = '';
         }
+      }
+    }
+  }, {
+    key: "onEdit",
+    value: function onEdit(articleId, content) {
+      this.setState({
+        isEditing: true,
+        optionMenu: false
+      });
+    }
+  }, {
+    key: "onChangeContent",
+    value: function onChangeContent(e) {
+      this.setState({
+        content: e.target.value
+      });
+    }
+  }, {
+    key: "onUpdateContent",
+    value: function onUpdateContent(event, articleId) {
+      console.log(event.target.parentNode.querySelector('div').innerText);
+    }
+  }, {
+    key: "onDelete",
+    value: function onDelete(articleId) {
+      this.setState({
+        optionMenu: false
+      });
+      var conf = confirm("Are you sure?");
+
+      if (conf) {
+        this.props.onDelete(articleId);
       }
     }
   }, {
@@ -24885,14 +24889,17 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       var _this$state = this.state,
-          userArticle = _this$state.userArticle,
-          commentBox = _this$state.commentBox;
-      var _this$props2 = this.props,
-          article = _this$props2.article,
-          index = _this$props2.index;
+          commentBox = _this$state.commentBox,
+          optionMenu = _this$state.optionMenu,
+          isEditing = _this$state.isEditing;
+      var _this$props = this.props,
+          article = _this$props.article,
+          index = _this$props.index;
+      var author = article.author,
+          comments = article.comments;
       if (!article) return;
       var userId = this.props.user ? this.props.user._id : null;
       var isLiked = -1;
@@ -24906,38 +24913,68 @@ function (_Component) {
       var time = this.calTime(article.createdAt);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: index,
-        className: "article mt-4"
+        className: "article mt-4",
+        onMouseLeave: function onMouseLeave() {
+          return _this2.setState({
+            optionMenu: false
+          });
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "article-options"
+        className: "article-options",
+        onClick: function onClick() {
+          return _this2.setState({
+            optionMenu: !optionMenu
+          });
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-angle-down"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), optionMenu ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "article-option-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "article-option-item",
+        onClick: function onClick() {
+          return _this2.onEdit();
+        }
+      }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "article-option-item",
+        onClick: function onClick() {
+          return _this2.onDelete(article._id);
+        }
+      }, "Delete")) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "article-header mb-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "article-avatar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: userArticle ? userArticle.avatar : "media/logo.png",
+        src: article.author.avatar ? article.author.avatar : "media/logo.png",
         alt: "avatar"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "article-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "article-name"
-      }, userArticle ? "".concat(userArticle.firstname, " ").concat(userArticle.lastname) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, time))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, author ? "".concat(author.firstname, " ").concat(author.lastname) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, time))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "article-content"
-      }, article.content), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "",
+        contentEditable: isEditing,
+        onChange: this.onChangeContent
+      }, article.content), isEditing ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick(event) {
+          return _this2.onUpdateContent(event, article._id);
+        }
+      }, "Update") : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
         className: "article-hr mt-4 mb-4"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "article-btn-action"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: isLiked > -1 ? "liked" : "",
         onClick: function onClick() {
-          return _this3.props.onLike(article._id);
+          return _this2.props.onLike(article._id);
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "far fa-thumbs-up mr-4"
       }), article.likes.length), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this3.toggleCommentBox();
+          return _this2.toggleCommentBox();
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "far fa-comment mr-4"
@@ -24948,14 +24985,14 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
         className: "article-hr mb-8"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        comments: article.comments
+        comments: comments
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "mt-4",
         type: "text",
         placeholder: "Write your comment",
         autoFocus: true,
         onKeyDown: function onKeyDown(event) {
-          return _this3.onComment(event, article._id);
+          return _this2.onComment(event, article._id);
         }
       })) : null);
     }
@@ -25010,97 +25047,30 @@ function (_Component) {
     _classCallCheck(this, Comment);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Comment).call(this, props));
-    _this.state = {
-      commentUsers: []
-    };
+    _this.state = {};
     return _this;
   }
 
   _createClass(Comment, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      this.props.comments.forEach(function (comment, index) {
-        var req = new XMLHttpRequest();
-        req.open('POST', '/account/id', true);
-        req.setRequestHeader("Content-Type", "application/json");
-
-        req.onload = function () {
-          var user = JSON.parse(req.response);
-
-          if (user) {
-            var commentUsers = _this2.state.commentUsers;
-            if (!user.avatar) user.avatar = "media/logo.png";
-            commentUsers[index] = user;
-
-            _this2.setState({
-              commentUsers: commentUsers
-            });
-          }
-        };
-
-        req.send(JSON.stringify({
-          userId: comment.author
-        }));
-      });
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      var _this3 = this;
-
-      var current = this.props;
-      var index = prevProps.comments.length;
-
-      if (index !== current.comments.length) {
-        var newComment = current.comments[index];
-
-        if (newComment) {
-          var req = new XMLHttpRequest();
-          req.open('POST', '/account/id', true);
-          req.setRequestHeader("Content-Type", "application/json");
-
-          req.onload = function () {
-            var user = JSON.parse(req.response);
-
-            if (user) {
-              var commentUsers = _this3.state.commentUsers;
-              if (!user.avatar) user.avatar = "media/logo.png";
-              commentUsers[index] = user;
-
-              _this3.setState({
-                commentUsers: commentUsers
-              });
-            }
-          };
-
-          req.send(JSON.stringify({
-            userId: newComment.author
-          }));
-        }
-      }
-    }
-  }, {
     key: "loadComments",
     value: function loadComments(comments) {
       var rows = [];
       if (!comments) return null;
-      var commentUsers = this.state.commentUsers;
       comments.forEach(function (comment, index) {
+        var author = comment.author;
         rows.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: index,
           className: "article-comment-line mt-4"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "article-comment-avatar"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: commentUsers[index] ? commentUsers[index].avatar : "media/logo.png",
+          src: author.avatar ? author.avatar : "media/logo.png",
           alt: "avatar"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "article-comment-content"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "article-comment-name mr-2"
-        }, commentUsers[index] ? "".concat(commentUsers[index].firstname, " ").concat(commentUsers[index].lastname) : "One person"), comment.content)));
+        }, author ? "".concat(author.firstname, " ").concat(author.lastname) : "One person"), comment.content)));
       });
       return rows;
     }
@@ -25234,6 +25204,7 @@ function (_Component) {
     _this.handlePost = _this.handlePost.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.handleLike = _this.handleLike.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.handleComment = _this.handleComment.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -25270,6 +25241,8 @@ function (_Component) {
         var newArticle = JSON.parse(req.response);
 
         if (newArticle) {
+          var articles = _this3.state.articles;
+
           _this3.setState({
             articles: [newArticle].concat(_toConsumableArray(_this3.state.articles))
           });
@@ -25346,9 +25319,41 @@ function (_Component) {
       }));
     }
   }, {
+    key: "handleDelete",
+    value: function handleDelete(articleId) {
+      var _this6 = this;
+
+      var req = new XMLHttpRequest();
+      req.open('DELETE', '/articles/delete', true);
+      req.setRequestHeader('Content-Type', 'application/json');
+
+      req.onload = function () {
+        var result = JSON.parse(req.response);
+
+        if (result.n === 1 && result.ok === 1) {
+          var articles = _this6.state.articles;
+          var index = articles.findIndex(function (val) {
+            return val._id === articleId;
+          });
+
+          if (index !== -1) {
+            articles.splice(index, 1);
+
+            _this6.setState({
+              articles: articles
+            });
+          }
+        }
+      };
+
+      req.send(JSON.stringify({
+        articleId: articleId
+      }));
+    }
+  }, {
     key: "loadArticles",
     value: function loadArticles() {
-      var _this6 = this;
+      var _this7 = this;
 
       var rows = [];
       this.state.articles.forEach(function (article, index) {
@@ -25356,9 +25361,10 @@ function (_Component) {
           key: index,
           article: article,
           index: index,
-          onLike: _this6.handleLike,
-          onComment: _this6.handleComment,
-          user: _this6.props.user
+          onLike: _this7.handleLike,
+          onComment: _this7.handleComment,
+          onDelete: _this7.handleDelete,
+          user: _this7.props.user
         }));
       });
       return rows;

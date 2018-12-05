@@ -10,9 +10,14 @@ route.route('/')
         let content = body.content
         let userId = req.session.userId
         if(content && userId) {
-            Articles.create({content, userId}, (result, newArticle)=> {
-                if(result) res.json(newArticle)
-                else res.send(null)
+            Articles.create({content, userId}, (re, newArticleId)=> {
+                if(re) {
+                    Articles.getById(newArticleId, (result, doc)=> {
+                        if(result) res.json(doc)
+                        else res.json(null)
+                    })
+                }
+                else res.json(null)
             }) 
         } else res.send(false)
     })
@@ -27,9 +32,12 @@ route.route('/like').put((req, res)=> {
     let userId = req.session.userId
     if(!userId) res.json(null)
     else {
-        Articles.like(req.body._id, userId, (re, newArticle)=> {
+        Articles.like(req.body._id, userId, (re, newArticleId)=> {
             if(re) {
-                res.json(newArticle)
+                Articles.getById(newArticleId, (result, doc)=> {
+                    if(result) res.json(doc)
+                    else res.json(null)
+                })
             }
             else res.json(null)
         })
@@ -39,8 +47,33 @@ route.post('/comment', (req, res)=> {
     let userId = req.session.userId
     if(!userId) res.json(null)
     else {
-        Articles.comment(req.body.articleId, req.body.content, userId, (result, newArticle)=> {
-            if(result) res.json(newArticle)
+        Articles.comment(req.body.articleId, req.body.content, userId, (re, newArticleId)=> {
+            if(re) {
+                Articles.getById(newArticleId, (result, doc)=> {
+                    if(result) res.json(doc)
+                    else res.json(null)
+                })
+            }
+            else res.json(null)
+        })
+    }
+})
+route.put('/edit', (req, res)=> {
+    let userId = req.session.userId
+    if(!userId) res.json(null)
+    else {
+        Articles.edit(req.body.articleId, userId, req.body.content, (result, editedArticle)=> {
+            if(result) res.json(editedArticle)
+            else res.json(null)
+        })
+    }
+})
+route.delete('/delete', (req, res)=> {
+    let userId = req.session.userId
+    if(!userId) res.json(null)
+    else {
+        Articles.delete(req.body.articleId, userId, (result, deletedArticle)=> {
+            if(result) res.json(deletedArticle)
             else res.json(null)
         })
     }

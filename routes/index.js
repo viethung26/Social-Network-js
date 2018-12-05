@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const bodyParser = require('body-parser')
 const path = require('path')
 //test
 const users = require('../models/Users')
@@ -9,8 +8,7 @@ router.use((req,res, next)=>{
     req.session.nowInMinutes = Math.floor(Date.now()/60e3)
     next()
 })
-router.use(bodyParser.urlencoded({extended: false}))
-router.use(bodyParser.json())
+
 router.get('/', (req, res, next)=> {
     let userId = req.session.userId
     if(userId) {
@@ -29,14 +27,4 @@ router.use('/signout', require('./api/signout'))
 router.use('/upload', require('./api/upload'))
 router.use('/account', require('./api/account'))
 
-/// For test
-router.route('/test')
-.get((req, res)=> {
-    console.log(req.body.test)
-    res.json(null)
-})
-.post((req, res)=> {
-    console.log(req.body.test)
-    res.json(null)
-})
 module.exports = router

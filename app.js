@@ -2,18 +2,21 @@ const express = require('express')
 const cookieSession = require('cookie-session')
 const app = express()
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+
+require('./models/Comments')
 require('./models/Articles')
 require('./models/Users')
-const route = require('./routes/index')
-
-mongoose.connect('mongodb://localhost/myDatabase' ,{useNewUrlParser: true})
-// parse application/json
-// app.use(bodyParser.json())
+// require('./config/passport')
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+mongoose.set('useCreateIndex', true)
+mongoose.connect('mongodb://localhost/mySocialNetwork' ,{useNewUrlParser: true})
 app.set('views', './views')
 app.set('view engine', 'pug')
-app.use(cookieSession({name: 'session', keys: ['key1'],secret: "secret",maxAge: 24*60*60*60*1000}))
+app.use(cookieSession({name: 'session', keys: ['key1'],secret: "secret",maxAge: 24*60*60*1000}))
 //router
-app.use('/',route)
+app.use(require('./routes'))
 app.use(express.static('./public'))
 app.use(express.static('./upload'))
 
