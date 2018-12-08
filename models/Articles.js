@@ -10,14 +10,27 @@ const AriclesSchema = new mongoose.Schema({
 }, {timestamps: true})
 
 let articles = mongoose.model('articles', AriclesSchema)
-
+function parseTag(str) {
+    let tags = []
+    const tagRegex = /^#[a-zA-Z]+[a-zA-Z0-9]*$/
+    let index = str.indexOf("#")
+    if(index!==-1) {
+        str = str.slice(index)
+        let arr = str.split(" ")
+        arr.forEach(val=> {
+            if(tagRegex.test(val)) tags.push(val)
+        })
+    }
+    return tags;
+}
 exports.create = function (article, callback) {
     let content = article.content
     let author = article.userId
     let likes = []
     let comments = []
     if(content && author) {
-        articles.create({content, author, likes, comments},(err,article)=> {
+        let tags = parseTag(content)
+        articles.create({content, author, likes, comments, tags},(err,article)=> {
             if(err) callback(false)
             else callback(true, article._id)
         })
@@ -33,6 +46,32 @@ exports.getById = function (articleId, callback) {
     }).exec((err, doc)=> {
         if(err) callback(false)
         else callback(true, doc)
+    })
+}
+exports.getByUserId = function (userId, callback) {
+    articles.find({author: userId}).sort({createdAt: -1}).populate({
+        path: 'author',
+        select: ['firstname', 'lastname', 'avatar']
+    }).populate({
+        path: 'comments',
+        populate: {path: 'author',  select: ['firstname', 'lastname', 'avatar']}
+    }).exec((err, docs)=> {
+        if(err) callback(false)
+        else {
+            callback(true, docs)
+        }
+    })
+}
+exports.getByTag = function (tag, callback) {
+    articles.$where(`this.tags.indexOf('${tag}')!==-1`).sort({createdAt: -1}).populate({
+        path: 'author',
+        select: ['firstname', 'lastname', 'avatar']
+    }).populate({
+        path: 'comments',
+        populate: {path: 'author',  select: ['firstname', 'lastname', 'avatar']}
+    }).exec((err, docs)=> {
+        if(err) callback(false)
+        else callback(true, docs)
     })
 }
 exports.get = function(callback) {
@@ -52,7 +91,6 @@ exports.like = function(articleId, userId, callback) {
         if(err) callback(false)
         else {
             let likes = doc.likes
-            console.log("like")
             let index = likes.findIndex(val=> val.equals(userId))
             if(index===-1) likes.push(userId)
             else likes.splice(index,1)

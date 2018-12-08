@@ -78,5 +78,21 @@ route.delete('/delete', (req, res)=> {
         })
     }
 })
+route.get('/tag', (req, res)=> {
+    let tag = req.query.tag
+    if(tag) {
+        tag = '#' + tag
+        Articles.getByTag(tag, (result, docs)=> {
+            if(result) res.json(docs)
+            else res.json(null)
+        }) 
+    } else res.end()
+})
+route.get('/:userId', (req, res)=> {
+    Articles.getByUserId(req.params.userId, (result, docs)=> {
+        if(result) res.json(docs)
+        else res.json(null)
+    })
+})
 
 module.exports = route

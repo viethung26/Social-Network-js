@@ -19,8 +19,9 @@ UserSchema.plugin(uniqueValidator, {message: 'is already taken.'})
 const users = mongoose.model('users',UserSchema)
 
 exports.signin = function(body, callback){
-    let username = body.username.toLowerCase()
+    let username = body.username
     let password = body.password
+    username = username?username.toLowerCase():null
     users.findOne({username},(err,user)=> {
         if(err) console.error(err)
         if(!user) {
@@ -61,8 +62,8 @@ exports.signup = function(body, callback){
     }
     
 }
-exports.avatar = function(username, avatar, callback){
-    users.updateOne({username}, {$set: {avatar}}, (err, user)=> {
+exports.avatar = function(userId, avatar, callback){
+    users.findByIdAndUpdate(userId, {$set: {avatar}}, (err, user)=> {
         if(err) callback(false)
         else callback(true, user)
     })

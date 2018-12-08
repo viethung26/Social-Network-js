@@ -1,5 +1,6 @@
 const express = require('express')
 const route = express.Router()
+const path = require('path')
 const Users = require('../../models/Users')
 
 route.post('/',(req, res, next)=> {
@@ -11,6 +12,10 @@ route.post('/',(req, res, next)=> {
         else res.send('Khong thanh cong')
         next()
     })
+})
+route.get('/', (req, res)=> {
+    if(req.session.userId) res.redirect('/')
+    else res.sendFile(path.join(__dirname, '../../public/signup.html'))
 })
 
 module.exports = route
