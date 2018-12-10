@@ -26,5 +26,14 @@ route.post('/id', (req, res)=> {
         })
     } else res.json(false)
 })
+route.get('/userId/:id', (req, res)=> {
+    Users.findById(req.params.id, (result, user)=> {
+        if(result) {
+            res.json(user)
+        } else {
+            res.json(null)
+        }
+    })
+})
 
 module.exports = route

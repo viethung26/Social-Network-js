@@ -9,16 +9,7 @@ router.use((req,res, next)=>{
     next()
 })
 
-router.get('/test', (req, res, next)=> {
-    let tag = req.query.tag
-    if(tag) {
-        tag = '#' + tag
-        Articles.getByTag(tag, (result, docs)=> {
-            if(result) res.json(docs)
-            else res.json(null)
-        }) 
-    } else res.end()
-})
+
 
 router.use('/articles', require('./api/articles'))
 router.use('/signup', require('./api/signup'))
@@ -26,6 +17,7 @@ router.use('/signin', require('./api/signin'))
 router.use('/signout', require('./api/signout'))
 router.use('/upload', require('./api/upload'))
 router.use('/account', require('./api/account'))
+router.use('/tags', require('./api/tags'))
 router.get('/profile', (req, res)=> {
     res.redirect('/')
 })

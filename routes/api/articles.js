@@ -62,8 +62,13 @@ route.put('/edit', (req, res)=> {
     let userId = req.session.userId
     if(!userId) res.json(null)
     else {
-        Articles.edit(req.body.articleId, userId, req.body.content, (result, editedArticle)=> {
-            if(result) res.json(editedArticle)
+        Articles.edit(req.body.articleId, userId, req.body.content, (result, newArticleId)=> {
+            if(result) {
+                Articles.getById(newArticleId, (result, doc)=> {
+                    if(result) res.json(doc)
+                    else res.json(null)
+                })
+            }
             else res.json(null)
         })
     }

@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 const ObjectId = mongoose.Schema.Types.ObjectId;
 const Comments = mongoose.model('comments')
+const Tags = require('./Tags')
 const AriclesSchema = new mongoose.Schema({
     content: String,
     author: {type: ObjectId, ref: 'users'},
     likes: [{type: ObjectId}],
     comments: [{type: ObjectId, ref: 'comments'}],
-    tags: [{type: String}]
+    tags: [{type: String, lowercase:true, match: [/^#[a-zA-Z]+[a-zA-Z0-9]*$/, "is invalid"], index: true}]
 }, {timestamps: true})
 
 let articles = mongoose.model('articles', AriclesSchema)
@@ -32,9 +33,36 @@ exports.create = function (article, callback) {
         let tags = parseTag(content)
         articles.create({content, author, likes, comments, tags},(err,article)=> {
             if(err) callback(false)
-            else callback(true, article._id)
+            else {
+                tags.forEach(name=> {
+                    Tags.addTags(name, result=> {
+                    })
+                })
+                callback(true, article._id)
+            }
         })
     } else callback(false)
+}
+exports.edit = function(articleId, userId, content, callback) {
+    articles.findOne({_id: articleId}, (err, doc)=> {
+        if(err) callback(false)
+        else {
+            if(doc.author.equals(userId)) {
+                let tags = parseTag(content)
+                doc.set({content, tags})
+                doc.save((err, updatedTank)=> {
+                    if(err) callback(false)
+                    else {
+                        tags.forEach(name=> {
+                            Tags.addTags(name, result=> {
+                            })
+                        })
+                        callback(true, updatedTank._id)
+                    }
+                })
+            } else callback(false)
+        }
+    })
 }
 exports.getById = function (articleId, callback) {
     articles.findById(articleId).populate({
@@ -77,10 +105,10 @@ exports.getByTag = function (tag, callback) {
 exports.get = function(callback) {
     articles.find({}).sort({createdAt: -1}).populate({
         path: 'author',
-        select: ['firstname', 'lastname', 'avatar']
+        select: ['firstname', 'lastname', 'avatar', 'username']
     }).populate({
         path: 'comments',
-        populate: {path: 'author',  select: ['firstname', 'lastname', 'avatar']}
+        populate: {path: 'author',  select: ['firstname', 'lastname', 'avatar', 'username']}
     }).exec((err, docs)=> {
         if(err) callback(false)
         else callback(true, docs)
@@ -118,20 +146,7 @@ exports.comment = function(articleId, content, userId, callback) {
         })
     })
 }
-exports.edit = function(articleId, userId, content, callback) {
-    articles.findOne({_id: articleId}, (err, doc)=> {
-        if(err) callback(false)
-        else {
-            if(doc.author.equals(userId)) {
-                doc.set({content})
-                doc.save((err, updatedTank)=> {
-                    if(err) callback(false)
-                    else callback(true, updatedTank)
-                })
-            } else callback(false)
-        }
-    })
-}
+
 exports.delete = function(articleId, userId, callback) {
     articles.findOne({_id: articleId}, (err, doc)=> {
         if(doc.author.equals(userId)) {

@@ -80,11 +80,15 @@ exports.findByUsername = function(username, callback) {
     })
 }
 exports.findById = function(id, callback) {
-    users.findById({_id:id}, {}, (err, doc)=> {
+    users.findById({_id:id}, {}, (err, user)=> {
         if(err) {
             console.log(err)
             callback(false)
         }
-        else callback(true, doc)
+        else {
+            let {_id, avatar, firstname, lastname, email, gender, bio} = user
+            let data = {_id, avatar,firstname, lastname, email, gender, bio}
+            callback(true, data)}
+
     })
 }

@@ -7,7 +7,7 @@ route.post('/', (req, res)=>{
             req.session.userId = userId
             res.redirect('/')
         }
-        else res.send("Username or password is wrong")
+        else res.redirect("/signup")
     })
 })
 
