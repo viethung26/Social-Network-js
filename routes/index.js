@@ -18,7 +18,11 @@ router.use('/signout', require('./api/signout'))
 router.use('/upload', require('./api/upload'))
 router.use('/account', require('./api/account'))
 router.use('/tags', require('./api/tags'))
-router.get('/profile', (req, res)=> {
-    res.redirect('/')
+router.get('/profile/:id', (req, res)=> {
+    res.sendFile(path.join(__dirname, "../public/index.html"))
 })
+router.get('/search/:tag', (req, res)=> {
+    res.sendFile(path.join(__dirname, "../public/index.html"))
+})
+
 module.exports = router

@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c32e5b9e5d30c6b200c8";
+/******/ 	var hotCurrentHash = "5b0f01b8f6fc473b036f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -29242,6 +29242,17 @@ function (_Component) {
   }
 
   _createClass(Article, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(preprops) {
+      var article = this.props.article;
+
+      if (article) {
+        if (this.state.editContent !== article.content) this.setState({
+          editContent: article.content
+        });
+      }
+    }
+  }, {
     key: "onComment",
     value: function onComment(event, articleId) {
       if (event.keyCode === 13) {
@@ -30437,7 +30448,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "stt-btn stt-btn-avatar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.props.avatar,
+        src: "/".concat(this.props.avatar),
         alt: "avatar"
       }))));
     }
@@ -31164,13 +31175,13 @@ function (_Component) {
         href: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "logo",
-        src: "media/logo.png",
+        src: "/media/logo.png",
         alt: "logo"
       }), "XuXu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header_SearchBar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "status-bar"
       }, user ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header_StatusBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
         user: user,
-        avatar: user.avatar ? user.avatar : "media/defaultavatar.png"
+        avatar: user.avatar ? user.avatar : "/media/defaultavatar.png"
       }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header_SignInForm__WEBPACK_IMPORTED_MODULE_3__["default"], null)), user ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "stt-option"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

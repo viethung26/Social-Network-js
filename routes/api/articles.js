@@ -2,8 +2,6 @@ const Articles = require('../../models/Articles')
 const route = require('express').Router()
 const Users = require('../../models/Users')
 
-
-
 route.route('/')
     .post((req, res)=> {
         const {body} = req
