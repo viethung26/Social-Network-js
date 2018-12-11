@@ -12,11 +12,11 @@ require('./models/Users')
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 mongoose.set('useCreateIndex', true)
-// mongoose.connect('mongodb://ds129914.mlab.com:29914/social-network' ,{auth: {
-//     user: MONGO_DB_USER,
-//     password: MONGO_DB_PASSWORD
-//   },useNewUrlParser: true})
-mongoose.connect('mongodb://localhost/mySocialNetwork' ,{useNewUrlParser: true})
+mongoose.connect('mongodb://ds129914.mlab.com:29914/social-network' ,{auth: {
+    user: MONGO_DB_USER,
+    password: MONGO_DB_PASSWORD
+  },useNewUrlParser: true})
+// mongoose.connect('mongodb://localhost/mySocialNetwork' ,{useNewUrlParser: true})
 app.set('views', './views')
 app.set('view engine', 'pug')
 app.use(cookieSession({name: 'session', keys: ['key1'],secret: "secret",maxAge: 24*60*60*1000}))
